@@ -21,14 +21,14 @@ public class TestTransactionAgentService2Impl implements DubboWithDistributedTra
 	
 
 	public CommonResponse service2() {
-		System.out.println("execute service2-----");
+		System.out.println("execute=================================== service2 ===================");
 		dubboWithDistributedTransactionAgentService1.service1();
 		return new CommonResponse();
 		
 	}
 
 	public CommonResponse service2rollback() {
-		System.out.println("execute service2 rollback-----");
+		System.out.println("execute----------------------------------- service2rollback -----------");
 		return new CommonResponse();
 		
 	}

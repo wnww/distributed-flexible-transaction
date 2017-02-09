@@ -17,6 +17,7 @@ public class TransactionServiceLauncher {
 	public static final String SHUTDOWN_HOOK_KEY = "server.shutdown.hook";
 
 	private static volatile boolean running = true;
+	private static int times = 1;
 
 	public static void main(String[] args) {
 		long t = System.currentTimeMillis();
@@ -55,7 +56,10 @@ public class TransactionServiceLauncher {
 			
 			//拉起服务
 			context.start();
-			logger.info("distributed transaction manager Started!  take " + (System.currentTimeMillis() - t) + " ms");
+			if(times == 1){
+				logger.info("distributed transaction manager Started!  take " + (System.currentTimeMillis() - t) + " ms");
+			}
+			times ++;
 		} catch (RuntimeException e) {
 			logger.error(e.getMessage(), e);
 			System.exit(1);

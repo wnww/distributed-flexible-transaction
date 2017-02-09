@@ -67,7 +67,9 @@ public class TransactionFilter implements Filter {
 			if(StringUtil.isNullOrEmpty(transactionableRollbackMethod)){
 				return invoke(invoker,invocation);
 			} else {
+				// RPC上下文信息
 				RpcContext context = RpcContext.getContext();
+				//根据反射机制获取目标服务接口名、方法名后，构造TransactionInvocation的POJO对象
 				TransactionInvocation commitInvocation = participantTracer.generateTransactionInvocation(serviceType, methodName, argumentValues, parameterTypes);
 				
 				TransactionInvocation rollbackInvocation = participantTracer.generateTransactionInvocation(serviceType, transactionableRollbackMethod, argumentValues, parameterTypes);
@@ -126,7 +128,7 @@ public class TransactionFilter implements Filter {
 			}catch(Exception ex){
 				logger.error("rollback the transaction occur error");
 			}
-			
+			e.printStackTrace();
 			throw new RpcException("occur exception,and rollback the transaction");
 			
 		} finally{
