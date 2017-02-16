@@ -29,7 +29,7 @@ public class TestService2Launcher {
 			
 			
 			
-			//拉起spring服务主配置文件和db-service module中的以spring-开头的mybatis配置文件:spring-dbservice-mybatis.xml
+			//鎷夎捣spring鏈嶅姟涓婚厤缃枃浠跺拰db-service module涓殑浠pring-寮�澶寸殑mybatis閰嶇疆鏂囦欢:spring-dbservice-mybatis.xml
 			final ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 					"classpath*:test-dubbo-service2.xml");
 			
@@ -55,7 +55,7 @@ public class TestService2Launcher {
 				});
 			}
 			
-			//拉起服务
+			//鎷夎捣鏈嶅姟
 			context.start();
 			if(times == 1){
 				logger.info("DubboWithDistributedTransactionAgentService2Launcher Started!  take " + (System.currentTimeMillis() - t) + " ms");

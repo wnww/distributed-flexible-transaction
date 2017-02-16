@@ -1,5 +1,7 @@
 package com.distributed.transaction.test.dubboservice2.provider;
 
+import java.io.Serializable;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +16,14 @@ import com.distributed.transaction.test.dubboservice2.api.DubboWithDistributedTr
  *
  */
 @Service("dubboWithDistributedTransactionAgentService2")
-public class TestTransactionAgentService2Impl implements DubboWithDistributedTransactionAgentService2{
+public class TestTransactionAgentService2Impl implements DubboWithDistributedTransactionAgentService2, Serializable{
 
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3338766213997335199L;
 	@Autowired
 	DubboWithDistributedTransactionAgentService1 dubboWithDistributedTransactionAgentService1;
 	
@@ -31,6 +39,11 @@ public class TestTransactionAgentService2Impl implements DubboWithDistributedTra
 		System.out.println("execute----------------------------------- service2rollback -----------");
 		return new CommonResponse();
 		
+	}
+	
+	public CommonResponse service2Commit(){
+		System.out.println("execute----------------------------------- service2Commit -----------");
+		return new CommonResponse();
 	}
 
 }
