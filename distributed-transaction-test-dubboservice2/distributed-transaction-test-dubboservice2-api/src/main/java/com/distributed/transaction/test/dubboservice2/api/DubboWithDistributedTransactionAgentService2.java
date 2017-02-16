@@ -15,4 +15,5 @@ public interface DubboWithDistributedTransactionAgentService2 {
 	CommonResponse service2();
 	
 	CommonResponse service2rollback();
+	
 }
