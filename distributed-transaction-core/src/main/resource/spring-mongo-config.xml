@@ -21,7 +21,7 @@
 <!--        <constructor-arg name="port" value="${db.port}"/> -->
 <!--      </bean>    -->
 
-     <mongo:mongo host="127.0.0.1" port="27017">
+     <mongo:mongo host="172.16.33.153" port="27017">
 	    <mongo:options            
 	        connections-per-host="200"
             threads-allowed-to-block-for-connection-multiplier="100"

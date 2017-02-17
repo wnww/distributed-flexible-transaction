@@ -9,9 +9,9 @@
      <dubbo:application name="testTransactionConsumer" owner="yubing" />
      
 	<!-- 使用zookeeper服务 -->
-	<dubbo:registry address="zookeeper://127.0.0.1:2181"
+	<dubbo:registry address="zookeeper://172.16.33.152:2181"
 		check="false"></dubbo:registry>
-     <dubbo:consumer timeout="30000" />
+     <dubbo:consumer timeout="3000000" />
     
 	<!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
 	<dubbo:reference id="dubboWithDistributedTransactionAgentService2"

@@ -13,7 +13,7 @@
 
     <dubbo:consumer check="false" />
     
-    <dubbo:service interface="com.distributed.transaction.api.service.TransactionManagerService" ref="transactionManagerService" timeout="10000"/>
+    <dubbo:service interface="com.distributed.transaction.api.service.TransactionManagerService" ref="transactionManagerService" timeout="3000000"/>
 
 
 </beans>

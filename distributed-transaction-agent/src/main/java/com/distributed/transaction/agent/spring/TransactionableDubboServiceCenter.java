@@ -65,6 +65,23 @@ public class TransactionableDubboServiceCenter implements ApplicationContextAwar
 		 return "";
 	}
 	
+//	public String getCommitMethodOfTransactionableAnnotaionOnMethod(Class<?> requiredType,String methodName,Class<?>[] parameterTypes){
+//		logger.info("requiredType name:{},methodName:{}",requiredType.getName(),methodName);
+//		Method method = null;
+//		try {
+//             method = requiredType.getDeclaredMethod(methodName, parameterTypes);
+//             if(method != null){
+//            	 Transactionable transactionableAnnotation  = method.getAnnotation(Transactionable.class);
+//            	 if(transactionableAnnotation != null){
+//            		 return transactionableAnnotation.commitMethod();
+//            	 }
+//             }
+//         } catch (Throwable e) {
+//             return "";
+//         }
+//		 return "";
+//	}
+	
 	
 	private void assertContextInjected(){
 		AssertUtil.notNull(applicationContext);

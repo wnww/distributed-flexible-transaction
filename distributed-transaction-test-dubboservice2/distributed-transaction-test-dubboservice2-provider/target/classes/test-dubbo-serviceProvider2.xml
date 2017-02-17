@@ -13,9 +13,9 @@
     <dubbo:registry protocol="${dubboservice2.registry.protocol}" address="${dubboservice2.registry.address}" />
 	<dubbo:protocol name="${dubboservice2.protocol.name}" port="${dubboservice2.protocol.port}" threadpool="cached" threads="${dubboservice2.service.provider.threads:200}"  />
 
-    <dubbo:consumer check="false" />
+    <dubbo:consumer check="false"/>
     
-    <dubbo:service interface="com.distributed.transaction.test.dubboservice2.api.DubboWithDistributedTransactionAgentService2" ref="dubboWithDistributedTransactionAgentService2" timeout="10000"/>
+    <dubbo:service interface="com.distributed.transaction.test.dubboservice2.api.DubboWithDistributedTransactionAgentService2" ref="dubboWithDistributedTransactionAgentService2" timeout="3000000"/>
     
      <dubbo:reference id="dubboWithDistributedTransactionAgentService1"
 		interface="com.distributed.transaction.test.dubboservice1.api.DubboWithDistributedTransactionAgentService1" />

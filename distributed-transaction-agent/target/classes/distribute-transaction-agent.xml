@@ -8,14 +8,14 @@
 
 	<dubbo:application name="distributedTransactionAgentApplication" owner="yubing" />
 
-	<dubbo:registry address="zookeeper://127.0.0.1:2181"
+	<dubbo:registry address="zookeeper://172.16.33.152:2181"
 		check="false"></dubbo:registry>
 
 
 	<!--distributedTransactionManagerService -->
 	<dubbo:reference id="transactionManagerService"
 		interface="com.distributed.transaction.api.service.TransactionManagerService" check="false"
-		filter="-transaction" timeout="20000">
+		filter="-transaction" timeout="3000000">
 	</dubbo:reference>
 
 	<bean id="transactionableDubboServiceCenter" class="com.distributed.transaction.agent.spring.TransactionableDubboServiceCenter">

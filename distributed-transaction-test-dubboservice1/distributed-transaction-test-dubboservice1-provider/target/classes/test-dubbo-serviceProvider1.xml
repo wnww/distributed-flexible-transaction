@@ -15,7 +15,7 @@
 
     <dubbo:consumer check="false" />
     
-    <dubbo:service interface="com.distributed.transaction.test.dubboservice1.api.DubboWithDistributedTransactionAgentService1" ref="dubboWithDistributedTransactionAgentService1" timeout="10000"/>
+    <dubbo:service interface="com.distributed.transaction.test.dubboservice1.api.DubboWithDistributedTransactionAgentService1" ref="dubboWithDistributedTransactionAgentService1" timeout="3000000"/>
 
 
 </beans>
