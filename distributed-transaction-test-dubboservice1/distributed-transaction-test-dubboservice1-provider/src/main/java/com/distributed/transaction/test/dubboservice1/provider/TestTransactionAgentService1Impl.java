@@ -15,24 +15,25 @@ public class TestTransactionAgentService1Impl implements DubboWithDistributedTra
 
 	public CommonResponse service1() {
 		System.out.println("execute=================================== service1 ===================");
-		StackTraceElement[] stack = (new Throwable()).getStackTrace();
-		System.out.println("编号	类名                                      方法名            行数");
-		String str = " ";
-		for (int i = 0; i < stack.length; i++) {
-			StackTraceElement ste = stack[i];
-			// System.out.println(ste.getClassName() + "." + ste.getMethodName()
-			// + "(...);");
-			// System.out.println(i + "--" + ste.getMethodName());
-			if (i == 0) {
-				for (int j = 0; j < (89 - ste.getClassName().length()); j++) {
-					str = str + " ";
-				}
-			}
-			System.out.println(i + "	" + ste.getClassName() + str + ste.getMethodName() + "	" + ste.getLineNumber());
-			// System.out.println(i + "--" + ste.getLineNumber());
-			str = " ";
-		}
-		return new CommonResponse();
+//		StackTraceElement[] stack = (new Throwable()).getStackTrace();
+//		System.out.println("编号	类名                                      方法名            行数");
+//		String str = " ";
+//		for (int i = 0; i < stack.length; i++) {
+//			StackTraceElement ste = stack[i];
+//			// System.out.println(ste.getClassName() + "." + ste.getMethodName()
+//			// + "(...);");
+//			// System.out.println(i + "--" + ste.getMethodName());
+//			if (i == 0) {
+//				for (int j = 0; j < (89 - ste.getClassName().length()); j++) {
+//					str = str + " ";
+//				}
+//			}
+//			System.out.println(i + "	" + ste.getClassName() + str + ste.getMethodName() + "	" + ste.getLineNumber());
+//			// System.out.println(i + "--" + ste.getLineNumber());
+//			str = " ";
+//		}
+		throw new RuntimeException();
+		//return new CommonResponse();
 
 	}
 
