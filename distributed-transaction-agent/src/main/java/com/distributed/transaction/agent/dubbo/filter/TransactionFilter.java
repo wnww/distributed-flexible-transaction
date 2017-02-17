@@ -52,7 +52,12 @@ public class TransactionFilter implements Filter {
 			transactionableRollbackMethod = transactionableDubboServiceCenter
 					.getRollBackMethodOftransactionableAnnotationOnMethod(serviceType, methodName, parameterTypes);
 			if (StringUtil.isNullOrEmpty(transactionableRollbackMethod)) {
-				return invoke(invoker, invocation);
+				//return invoke(invoker, invocation);
+				Result result = invoker.invoke(invocation);
+				if (isTriggerTransactionRollback(result)) {
+					throw new RpcException("distributed transaction trigger rollback Exception");
+				}
+				return result;
 			} else {
 				// RPC上下文信息
 				RpcContext context = RpcContext.getContext();
