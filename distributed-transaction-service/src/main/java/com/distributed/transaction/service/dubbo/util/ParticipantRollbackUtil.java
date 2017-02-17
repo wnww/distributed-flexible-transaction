@@ -88,6 +88,9 @@ public class ParticipantRollbackUtil {
 		
 		return null;
 	}
-	
 
+	public static Map<String, ReferenceConfig<?>> getReferenceConfigMap() {
+		return referenceConfigMap;
+	}
+	
 }

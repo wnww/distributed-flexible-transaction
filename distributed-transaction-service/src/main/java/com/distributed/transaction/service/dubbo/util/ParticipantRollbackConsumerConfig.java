@@ -29,10 +29,10 @@ public class ParticipantRollbackConsumerConfig {
 
 	
 	private ParticipantRollbackConsumerConfig(){
-		String applicationName = ConfigUtil.getProperty("transaction-servie.properties", "transaction.application.name");
-		String applicationOwner = ConfigUtil.getProperty("transaction-servie.properties", "transaction.application.owner");
-		String registryProtocol = ConfigUtil.getProperty("transaction-servie.properties", "transaction.registry.protocol");
-		String registryAddress = ConfigUtil.getProperty("transaction-servie.properties", "transaction.registry.address");
+		String applicationName = ConfigUtil.getProperty("transaction-service.properties", "transaction.application.name");
+		String applicationOwner = ConfigUtil.getProperty("transaction-service.properties", "transaction.application.owner");
+		String registryProtocol = ConfigUtil.getProperty("transaction-service.properties", "transaction.registry.protocol");
+		String registryAddress = ConfigUtil.getProperty("transaction-service.properties", "transaction.registry.address");
 
 		applicationConfig = new ApplicationConfig();
 		applicationConfig.setName(applicationName);
