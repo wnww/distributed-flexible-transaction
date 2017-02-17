@@ -113,7 +113,7 @@ public class TransactionFilter implements Filter {
 			} catch (Exception ex) {
 				logger.error("rollback the transaction occur error");
 			}
-			e.printStackTrace();
+			//e.printStackTrace();
 			throw new RpcException("occur exception,and rollback the transaction");
 
 		} finally {
